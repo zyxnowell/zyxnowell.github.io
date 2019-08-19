@@ -1,3 +1,3 @@
-## Resume
+## Repo for github pages
 
-An online resume for **_Nowell Zyx Sun_**
+This is a repo for testing Github pages
