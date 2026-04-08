@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,16 +6,19 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta
+      name="description"
+      content="Nowell Zyx Sun - Senior Software Engineer Portfolio"
+    />
+    <meta name="author" content="Nowell Zyx Sun" />
 
-    <title>Nowell Zyx Sun</title>
+    <title>Nowell Zyx Sun | Senior Software Engineer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
       rel="stylesheet"
@@ -28,15 +31,282 @@
       href="vendor/font-awesome/css/font-awesome.min.css"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles -->
     <link href="css/resume.css" rel="stylesheet" />
+
+    <style>
+      /* ── Section labels ── */
+      .section-label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #bd5d38;
+        margin-bottom: 0.4rem;
+      }
+
+      /* ── About ── */
+      .about-title {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 0.25rem;
+      }
+      .about-role {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #6c757d;
+        margin-bottom: 1.5rem;
+      }
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem;
+      }
+      .contact-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.875rem;
+        color: #6c757d;
+        margin-bottom: 0.4rem;
+      }
+      .contact-list li i {
+        width: 14px;
+        color: #bd5d38;
+        text-align: center;
+      }
+      .contact-list li a {
+        color: #6c757d;
+      }
+      .contact-list li a:hover {
+        color: #bd5d38;
+      }
+      .profile-summary {
+        font-size: 0.925rem;
+        line-height: 1.85;
+        color: #495057;
+        max-width: 620px;
+        border-left: 3px solid #bd5d38;
+        padding-left: 1rem;
+        margin-bottom: 1.75rem;
+      }
+      .social-links {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .social-link {
+        width: 38px;
+        height: 38px;
+        border-radius: 6px;
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #495057;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .social-link:hover {
+        background: #bd5d38;
+        border-color: #bd5d38;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* ── Experience timeline ── */
+      .timeline {
+        position: relative;
+        padding-left: 1.75rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 6px;
+        bottom: 0;
+        width: 2px;
+        background: #e9ecef;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -1.75rem;
+        top: 5px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #bd5d38;
+        box-shadow: 0 0 0 3px rgba(189, 93, 56, 0.15);
+      }
+      .timeline-item.current::before {
+        background: #bd5d38;
+      }
+      .company-badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: #bd5d38;
+        background: rgba(189, 93, 56, 0.08);
+        padding: 0.15rem 0.55rem;
+        border-radius: 20px;
+        margin-bottom: 0.35rem;
+      }
+      .job-role {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #212529;
+        margin-bottom: 0.2rem;
+      }
+      .job-date {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #adb5bd;
+        margin-bottom: 0.7rem;
+      }
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      .tech-tag {
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #495057;
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 0.15rem 0.5rem;
+        border-radius: 3px;
+      }
+
+      /* ── Education ── */
+      .edu-card {
+        border-left: 3px solid #bd5d38;
+        padding: 1rem 1.25rem;
+        background: #f8f9fa;
+        border-radius: 0 6px 6px 0;
+        margin-bottom: 1.25rem;
+      }
+      .edu-degree {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: #bd5d38;
+        margin-bottom: 0.2rem;
+      }
+      .edu-school {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #212529;
+        margin-bottom: 0.2rem;
+      }
+      .edu-detail {
+        font-size: 0.825rem;
+        color: #6c757d;
+      }
+
+      /* ── Skills ── */
+      .skill-category {
+        margin-bottom: 2.25rem;
+      }
+      .skill-category-title {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #6c757d;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.25rem;
+      }
+      .skill-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem 1.75rem;
+        align-items: flex-start;
+      }
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        text-align: center;
+        transition: transform 0.2s ease;
+      }
+      .skill-item:hover {
+        transform: translateY(-3px);
+      }
+      .skill-item i {
+        font-size: 2rem;
+      }
+      .skill-label {
+        font-size: 0.62rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #6c757d;
+      }
+
+      /* ── Interests ── */
+      .interest-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+      }
+      .interest-icon {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: rgba(189, 93, 56, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #bd5d38;
+        font-size: 1.1rem;
+      }
+      .interest-text strong {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #212529;
+        margin-bottom: 0.15rem;
+      }
+      .interest-text p {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin: 0;
+        line-height: 1.6;
+      }
+    </style>
   </head>
 
   <body id="page-top">
@@ -49,7 +319,7 @@
           <img
             class="img-fluid img-profile rounded-circle mx-auto mb-2"
             src="img/profile.jpg"
-            alt=""
+            alt="Nowell Zyx Sun"
           />
         </span>
       </a>
@@ -92,272 +362,405 @@
     </nav>
 
     <div class="container-fluid p-0">
+      <!-- ── About ── -->
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
-          <h1 class="mb-0">
-            Nowell Zyx
-            <span class="text-primary">Sun</span>
+          <span class="section-label">Portfolio</span>
+          <h1 class="about-title mb-0">
+            Nowell Zyx <span class="text-primary">Sun</span>
           </h1>
-          <div class="subheading mb-5">
-            Tagum City · Davao Del Norte, Philippines · (+63) 933-859-5754 ·
-            <a href="mailto:name@email.com">nz.sun03@gmail.com</a>
-          </div>
-          <!-- <p class="mb-5">Lorem ipsum dolor sit amet, lectus wisi in, massa dui. Leo etiam praesent urna ultrices proin, dictum nec amet malesuada litora ut. Lorem nonummy, felis non est dolor orci, amet eget.</p> -->
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/TeaTiimeee" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
+          <p class="about-role">Senior Software Engineer</p>
+
+          <ul class="contact-list">
+            <li>
+              <i class="fa fa-map-marker"></i> Tagum City, Davao Del Norte,
+              Philippines
             </li>
-            <li class="list-inline-item">
-              <a
-                href="https://www.linkedin.com/in/nowell-zyx-sun-14799311a/"
-                target="_blank"
-              >
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/zyxnowell" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
+            <li><i class="fa fa-phone"></i> (+63) 933-859-5754</li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <a href="mailto:nz.sun03@gmail.com">nz.sun03@gmail.com</a>
             </li>
           </ul>
+
+          <p class="profile-summary">
+            Results-driven Senior Software Engineer with over 9 years of
+            experience designing and delivering scalable web applications and
+            enterprise solutions. Strong command of full-stack development
+            across .NET, React, and Angular, with deep expertise in Azure cloud
+            services and modern DevOps practices. Committed to writing clean,
+            maintainable code and building products that make a measurable
+            impact.
+          </p>
+
+          <div class="social-links">
+            <a
+              class="social-link"
+              href="https://www.facebook.com/TeaTiimeee"
+              target="_blank"
+              title="Facebook"
+            >
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/in/nowell-zyx-sun-14799311a/"
+              target="_blank"
+              title="LinkedIn"
+            >
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://github.com/zyxnowell"
+              target="_blank"
+              title="GitHub"
+            >
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
         </div>
       </section>
 
+      <!-- ── Experience ── -->
       <section
         class="resume-section p-3 p-lg-5 d-flex flex-column"
         id="experience"
       >
         <div class="my-auto">
+          <span class="section-label">Career</span>
           <h2 class="mb-5">Experience</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Software Engineer</h3>
-              <div class="subheading mb-3">Phyrem LLC</div>
+          <div class="timeline">
+            <div class="timeline-item current">
+              <span class="company-badge">Phyrem LLC</span>
+              <div class="job-role">Senior Software Engineer</div>
+              <div class="job-date">
+                <i class="fa fa-calendar mr-1"></i> Sep 2023 – Present
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">.NET Core</span>
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">Azure</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">Bitbucket</span>
+                <span class="tech-tag">Metronic</span>
+                <span class="tech-tag">AspNetZero</span>
+              </div>
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Sep 2023 - <b>Present</b></span>
-            </div>
-          </div>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Engineer</h3>
-              <div class="subheading mb-3">Seveno Solutions Limited</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Aug 2021 - Sep 2023</span>
-            </div>
-          </div>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">
-                Seniort Software Developer
-                <h4>(Part Time)</h4>
-              </h3>
-              <div class="subheading mb-3">Lemontech I.T Solutions</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">May 2020 – Feb 2021</span>
-            </div>
-          </div>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Engineer</h3>
-              <div class="subheading mb-3">Dev Partners Philippines Inc.</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Jun 2018 - Aug 2021</span>
-            </div>
-          </div>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Developer</h3>
-              <div class="subheading mb-3">Note-e-fied Phils Inc.</div>
-              <!-- <p>Lorem ipsum dolor sit amet, lectus wisi in, massa dui. Leo etiam praesent urna ultrices proin, dictum nec amet malesuada litora ut. Lorem nonummy, felis non est dolor orci, amet eget.</p> -->
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Jul 2017 - Jun 2018</span>
-            </div>
-          </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Front-End Developer</h3>
-              <div class="subheading mb-3">Note-e-fied Phils Inc.</div>
-              <!-- <p>Lorem ipsum dolor sit amet, lectus wisi in, massa dui. Leo etiam praesent urna ultrices proin, dictum nec amet malesuada litora ut. Lorem nonummy, felis non est dolor orci, amet eget.</p> -->
+            <div class="timeline-item">
+              <span class="company-badge">Seveno Solutions Limited</span>
+              <div class="job-role">Software Engineer</div>
+              <div class="job-date">
+                <i class="fa fa-calendar mr-1"></i> Aug 2021 – Sep 2023
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">.NET Core</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Azure</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">Azure DevOps</span>
+                <span class="tech-tag">Metronic</span>
+              </div>
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Jul 2016 - Jul 2017</span>
+
+            <div class="timeline-item">
+              <span class="company-badge">Lemontech Solutions</span>
+              <div class="job-role">
+                Senior Software Developer
+                <span
+                  style="font-weight: 400; font-size: 0.85rem; color: #6c757d"
+                  >(Part-Time)</span
+                >
+              </div>
+              <div class="job-date">
+                <i class="fa fa-calendar mr-1"></i> May 2020 – Feb 2021
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">.NET Core</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Azure</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">Azure DevOps</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="company-badge">Dev Partners</span>
+              <div class="job-role">Software Engineer</div>
+              <div class="job-date">
+                <i class="fa fa-calendar mr-1"></i> Jun 2018 – Aug 2021
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">.NET Core</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">TypeScript</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="company-badge">Note-e-fied Phils Inc.</span>
+              <div class="job-role">Software Developer</div>
+              <div class="job-date">
+                <i class="fa fa-calendar mr-1"></i> Jul 2017 – Jun 2018
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">.NET</span>
+                <span class="tech-tag">jQuery</span>
+                <span class="tech-tag">MVC</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="company-badge">Note-e-fied Phils Inc.</span>
+              <div class="job-role">Front-End Developer</div>
+              <div class="job-date">
+                <i class="fa fa-calendar mr-1"></i> Jul 2016 – Jul 2017
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- ── Education ── -->
       <section
         class="resume-section p-3 p-lg-5 d-flex flex-column"
         id="education"
       >
         <div class="my-auto">
+          <span class="section-label">Background</span>
           <h2 class="mb-5">Education</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">St Mary's College of Tagum</h3>
-              <div class="subheading mb-3">
-                Bachelor of Science in Computer Science
-              </div>
-              <p>GWA: 88.13%</p>
+          <div class="edu-card">
+            <div class="edu-degree">
+              Bachelor of Science in Computer Science
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">2012 - 2016</span>
+            <div class="edu-school">St. Mary's College of Tagum</div>
+            <div class="edu-detail">
+              <i class="fa fa-calendar mr-1"></i> 2012 – 2016 &nbsp;·&nbsp; GWA:
+              88.13%
             </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">St Mary's College of Tagum High School</h3>
+          <div class="edu-card">
+            <div class="edu-degree">Secondary Education</div>
+            <div class="edu-school">
+              St. Mary's College of Tagum High School
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">2008 - 2012</span>
+            <div class="edu-detail">
+              <i class="fa fa-calendar mr-1"></i> 2008 – 2012
             </div>
           </div>
         </div>
       </section>
 
+      <!-- ── Skills ── -->
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
+          <span class="section-label">Expertise</span>
           <h2 class="mb-5">Skills</h2>
 
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicon-react-original colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-angularjs-plain colored"></i>
-            </li>
+          <div class="skill-category">
+            <div class="skill-category-title">Front-End</div>
+            <div class="skill-grid">
+              <div class="skill-item">
+                <i class="devicon-react-original colored"></i
+                ><span class="skill-label">React</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-angularjs-plain colored"></i
+                ><span class="skill-label">Angular</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-javascript-plain colored"></i
+                ><span class="skill-label">JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-typescript-plain colored"></i
+                ><span class="skill-label">TypeScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-html5-plain-wordmark colored"></i
+                ><span class="skill-label">HTML5</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-css3-plain-wordmark colored"></i
+                ><span class="skill-label">CSS3</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-less-plain-wordmark colored"></i
+                ><span class="skill-label">LESS</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-tailwindcss-plain-wordmark colored"></i
+                ><span class="skill-label">Tailwind</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-bootstrap-plain-wordmark colored"></i
+                ><span class="skill-label">Bootstrap</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-antdesign-plain-wordmark colored"></i
+                ><span class="skill-label">Ant Design</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-reactbootstrap-original colored"></i
+                ><span class="skill-label">React BS</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-angularmaterial-plain colored"></i
+                ><span class="skill-label">Material</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-redux-original colored"></i
+                ><span class="skill-label">Redux</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-rxjs-plain colored"></i
+                ><span class="skill-label">RxJS</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-axios-plain-wordmark colored"></i
+                ><span class="skill-label">Axios</span>
+              </div>
+            </div>
+          </div>
 
-            <li class="list-inline-item">
-              <i class="devicon-javascript-plain colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-typescript-plain colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-dotnetcore-plain colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-csharp-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-azure-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-azuredevops-plain colored"></i>
-            </li>
+          <div class="skill-category">
+            <div class="skill-category-title">Back-End &amp; Cloud</div>
+            <div class="skill-grid">
+              <div class="skill-item">
+                <i class="devicon-dotnetcore-plain colored"></i
+                ><span class="skill-label">.NET Core</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-dot-net-plain-wordmark colored"></i
+                ><span class="skill-label">.NET</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-csharp-plain-wordmark colored"></i
+                ><span class="skill-label">C#</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-nodejs-plain-wordmark colored"></i
+                ><span class="skill-label">Node.js</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-azure-plain-wordmark colored"></i
+                ><span class="skill-label">Azure</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-azuredevops-plain colored"></i
+                ><span class="skill-label">Azure DevOps</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-microsoftsqlserver-plain colored"></i
+                ><span class="skill-label">SQL Server</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-azuresqldatabase-plain colored"></i
+                ><span class="skill-label">Azure SQL</span>
+              </div>
+            </div>
+          </div>
 
-            <li class="list-inline-item">
-              <i class="devicon-tailwindcss-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-antdesign-plain-wordmark colored"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicon-redux-original colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-rxjs-plain colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-bootstrap-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-microsoftsqlserver-plain colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-azuresqldatabase-plain colored"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicon-html5-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-css3-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-less-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-reactbootstrap-original colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-angularmaterial-plain colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-axios-plain-wordmark colored"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicon-dot-net-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-git-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-github-original-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-bitbucket-original-wordmark colored"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicon-visualstudio-plain colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-vscode-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-swagger-plain-wordmark colored"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicon-postman-plain-wordmark colored"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicon-nodejs-plain-wordmark colored"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicon-photoshop-line colored"></i>
-            </li>
-          </ul>
+          <div class="skill-category">
+            <div class="skill-category-title">Tools &amp; Workflow</div>
+            <div class="skill-grid">
+              <div class="skill-item">
+                <i class="devicon-git-plain-wordmark colored"></i
+                ><span class="skill-label">Git</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-github-original-wordmark colored"></i
+                ><span class="skill-label">GitHub</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-bitbucket-original-wordmark colored"></i
+                ><span class="skill-label">Bitbucket</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-visualstudio-plain colored"></i
+                ><span class="skill-label">Visual Studio</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-vscode-plain-wordmark colored"></i
+                ><span class="skill-label">VS Code</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-swagger-plain-wordmark colored"></i
+                ><span class="skill-label">Swagger</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-postman-plain-wordmark colored"></i
+                ><span class="skill-label">Postman</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-photoshop-line colored"></i
+                ><span class="skill-label">Photoshop</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- ── Interests ── -->
       <section
         class="resume-section p-3 p-lg-5 d-flex flex-column"
         id="interests"
       >
         <div class="my-auto">
+          <span class="section-label">Personal</span>
           <h2 class="mb-5">Interests</h2>
-          <p>
-            Apart from being a web developer, I enjoy most of my time being
-            indoors. I spend most of my free time watching movies, playing
-            online games, watching anime, and playing the guitar.
-          </p>
+
+          <div class="interest-item">
+            <div class="interest-icon"><i class="fa fa-film"></i></div>
+            <div class="interest-text">
+              <strong>Film &amp; Anime</strong>
+              <p>
+                Avid movie watcher and anime enthusiast -always on the lookout
+                for a great story and compelling characters.
+              </p>
+            </div>
+          </div>
+
+          <div class="interest-item">
+            <div class="interest-icon"><i class="fa fa-gamepad"></i></div>
+            <div class="interest-text">
+              <strong>Gaming</strong>
+              <p>
+                Enjoy unwinding with online games -a great way to decompress
+                after a productive day of building software.
+              </p>
+            </div>
+          </div>
+
+          <div class="interest-item">
+            <div class="interest-icon"><i class="fa fa-music"></i></div>
+            <div class="interest-text">
+              <strong>Guitar</strong>
+              <p>
+                Playing the guitar is a creative outlet that keeps me balanced
+                and inspired outside of tech.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -365,11 +768,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
   </body>
 </html>
