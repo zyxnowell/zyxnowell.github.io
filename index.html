@@ -14,8 +14,46 @@
 
     <title>Nowell Zyx Sun | Senior Software Engineer</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Nowell Zyx Sun | Senior Software Engineer" />
+    <meta property="og:description" content="Results-driven Senior Software Engineer with over 9 years of experience designing and delivering scalable web applications and enterprise solutions." />
+    <meta property="og:image" content="https://zyxnowell.github.io/img/profile.jpg" />
+    <meta property="og:url" content="https://zyxnowell.github.io" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nowell Zyx Sun",
+      "givenName": "Nowell Zyx",
+      "familyName": "Sun",
+      "jobTitle": "Senior Software Engineer",
+      "email": "nz.sun03@gmail.com",
+      "telephone": "(+63) 933-859-5754",
+      "url": "https://zyxnowell.github.io",
+      "image": "https://zyxnowell.github.io/img/profile.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tagum City",
+        "addressRegion": "Davao Del Norte",
+        "addressCountry": "Philippines"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "St. Mary's College of Tagum"
+      },
+      "knowsAbout": [".NET Core", "React", "Angular", "C#", "TypeScript", "Azure", "SQL Server"]
+    }
+    </script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Custom fonts -->
@@ -28,7 +66,7 @@
       rel="stylesheet"
     />
     <link
-      href="vendor/font-awesome/css/font-awesome.min.css"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
     <link
@@ -41,6 +79,113 @@
     <link href="css/resume.css" rel="stylesheet" />
 
     <style>
+      /* ── CSS Custom Properties (Light) ── */
+      :root {
+        --color-primary: #bd5d38;
+        --color-primary-rgb: 189, 93, 56;
+        --color-primary-light: rgba(189, 93, 56, 0.08);
+        --color-primary-shadow: rgba(189, 93, 56, 0.15);
+        --color-bg: #fff;
+        --color-surface: #f8f9fa;
+        --color-text: #212529;
+        --color-text-secondary: #6c757d;
+        --color-text-muted: #495057;
+        --color-text-light: #adb5bd;
+        --color-border: #dee2e6;
+        --color-border-light: #e9ecef;
+        --color-accent-bg: #f8f9fa;
+        --color-navbar-bg: #336e7b;
+        --color-text-primary: #336E7B;
+      }
+
+      /* ── Dark Mode ── */
+      [data-theme="dark"] {
+        --color-primary: #7c3aed;
+        --color-primary-rgb: 124, 58, 237;
+        --color-primary-light: rgba(124, 58, 237, 0.12);
+        --color-primary-shadow: rgba(124, 58, 237, 0.25);
+        --color-bg: #0f1023;
+        --color-surface: #1a1b2e;
+        --color-text: #e2e8f0;
+        --color-text-secondary: #94a3b8;
+        --color-text-muted: #cbd5e1;
+        --color-text-light: #64748b;
+        --color-border: #2d2e42;
+        --color-border-light: #2d2e42;
+        --color-accent-bg: #1e2035;
+        --color-navbar-bg: #0b0c1a;
+        --color-text-primary: #a78bfa;
+      }
+      [data-theme="dark"] .bg-primary {
+        background-color: var(--color-navbar-bg) !important;
+      }
+      [data-theme="dark"] .navbar-dark .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.65);
+      }
+      [data-theme="dark"] .navbar-dark .navbar-nav .nav-link:hover,
+      [data-theme="dark"] .navbar-dark .navbar-nav .nav-link.active {
+        color: #fff;
+      }
+      [data-theme="dark"] .navbar-brand .img-profile {
+        border-color: rgba(255, 255, 255, 0.08) !important;
+      }
+      [data-theme="dark"] .btn-resume:hover {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+
+      /* ── Scroll reveal ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── Scroll-to-top ── */
+      #scroll-to-top {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: var(--color-primary);
+        color: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(12px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 1050;
+      }
+      #scroll-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      #scroll-to-top:hover {
+        filter: brightness(1.15);
+      }
+
+      /* ── Anchor scroll offset ── */
+      section.resume-section {
+        scroll-margin-top: 60px;
+      }
+      @media (min-width: 992px) {
+        section.resume-section {
+          scroll-margin-top: 0;
+        }
+      }
+
       /* ── Section labels ── */
       .section-label {
         display: block;
@@ -48,7 +193,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.15em;
-        color: #bd5d38;
+        color: var(--color-primary);
         margin-bottom: 0.4rem;
       }
 
@@ -59,13 +204,14 @@
         letter-spacing: -0.02em;
         line-height: 1.1;
         margin-bottom: 0.25rem;
+        color: var(--color-text);
       }
       .about-role {
         font-size: 1rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.12em;
-        color: #6c757d;
+        color: var(--color-text-secondary);
         margin-bottom: 1.5rem;
       }
       .contact-list {
@@ -78,43 +224,44 @@
         align-items: center;
         gap: 0.6rem;
         font-size: 0.875rem;
-        color: #6c757d;
+        color: var(--color-text-secondary);
         margin-bottom: 0.4rem;
       }
       .contact-list li i {
         width: 14px;
-        color: #bd5d38;
+        color: var(--color-primary);
         text-align: center;
       }
       .contact-list li a {
-        color: #6c757d;
+        color: var(--color-text-secondary);
       }
       .contact-list li a:hover {
-        color: #bd5d38;
+        color: var(--color-primary);
       }
       .profile-summary {
         font-size: 0.925rem;
         line-height: 1.85;
-        color: #495057;
+        color: var(--color-text-muted);
         max-width: 620px;
-        border-left: 3px solid #bd5d38;
+        border-left: 3px solid var(--color-primary);
         padding-left: 1rem;
         margin-bottom: 1.75rem;
       }
       .social-links {
         display: flex;
         gap: 0.6rem;
+        align-items: center;
       }
       .social-link {
         width: 38px;
         height: 38px;
         border-radius: 6px;
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #495057;
+        color: var(--color-text-muted);
         font-size: 0.95rem;
         text-decoration: none;
         transition:
@@ -123,10 +270,92 @@
           color 0.2s;
       }
       .social-link:hover {
-        background: #bd5d38;
-        border-color: #bd5d38;
+        background: var(--color-primary);
+        border-color: var(--color-primary);
         color: #fff;
         text-decoration: none;
+      }
+
+      /* ── Download Resume ── */
+      .btn-resume {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 0.45rem 1rem;
+        border-radius: 6px;
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+        background: transparent;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+      }
+      .btn-resume:hover {
+        background: var(--color-primary);
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* ── Theme toggle switch in sidebar ── */
+      #theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        margin-top: auto;
+      }
+      .toggle-switch {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .toggle-icon {
+        font-size: 0.8rem;
+        transition: color 0.3s;
+      }
+      .toggle-icon.fa-sun-o {
+        color: #fff;
+      }
+      .toggle-icon.fa-moon-o {
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .toggle-track {
+        position: relative;
+        width: 36px;
+        height: 20px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        transition: background 0.3s;
+      }
+      .toggle-thumb {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff;
+        transition: transform 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+      [data-theme="dark"] .toggle-thumb {
+        transform: translateX(16px);
+      }
+      [data-theme="dark"] .toggle-track {
+        background: var(--color-primary);
+      }
+      [data-theme="dark"] .toggle-icon.fa-moon-o {
+        color: #fff;
+      }
+      [data-theme="dark"] .toggle-icon.fa-sun-o {
+        color: rgba(255, 255, 255, 0.35);
       }
 
       /* ── Experience timeline ── */
@@ -141,7 +370,7 @@
         top: 6px;
         bottom: 0;
         width: 2px;
-        background: #e9ecef;
+        background: var(--color-border-light);
       }
       .timeline-item {
         position: relative;
@@ -155,12 +384,12 @@
         width: 11px;
         height: 11px;
         border-radius: 50%;
-        background: #fff;
-        border: 2px solid #bd5d38;
-        box-shadow: 0 0 0 3px rgba(189, 93, 56, 0.15);
+        background: var(--color-bg);
+        border: 2px solid var(--color-primary);
+        box-shadow: 0 0 0 3px var(--color-primary-shadow);
       }
       .timeline-item.current::before {
-        background: #bd5d38;
+        background: var(--color-primary);
       }
       .company-badge {
         display: inline-block;
@@ -168,8 +397,8 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.07em;
-        color: #bd5d38;
-        background: rgba(189, 93, 56, 0.08);
+        color: var(--color-primary);
+        background: var(--color-primary-light);
         padding: 0.15rem 0.55rem;
         border-radius: 20px;
         margin-bottom: 0.35rem;
@@ -177,7 +406,7 @@
       .job-role {
         font-size: 1.05rem;
         font-weight: 700;
-        color: #212529;
+        color: var(--color-text);
         margin-bottom: 0.2rem;
       }
       .job-date {
@@ -185,8 +414,27 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.06em;
-        color: #adb5bd;
-        margin-bottom: 0.7rem;
+        color: var(--color-text-light);
+        margin-bottom: 0.5rem;
+      }
+      .job-desc {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: var(--color-text-muted);
+        margin-bottom: 0.6rem;
+        padding-left: 0;
+        list-style: none;
+      }
+      .job-desc li {
+        position: relative;
+        padding-left: 1rem;
+        margin-bottom: 0.25rem;
+      }
+      .job-desc li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
       }
       .tech-tags {
         display: flex;
@@ -198,18 +446,18 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.04em;
-        color: #495057;
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
+        color: var(--color-text-muted);
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
         padding: 0.15rem 0.5rem;
         border-radius: 3px;
       }
 
       /* ── Education ── */
       .edu-card {
-        border-left: 3px solid #bd5d38;
+        border-left: 3px solid var(--color-primary);
         padding: 1rem 1.25rem;
-        background: #f8f9fa;
+        background: var(--color-accent-bg);
         border-radius: 0 6px 6px 0;
         margin-bottom: 1.25rem;
       }
@@ -218,18 +466,18 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.07em;
-        color: #bd5d38;
+        color: var(--color-primary);
         margin-bottom: 0.2rem;
       }
       .edu-school {
         font-size: 1rem;
         font-weight: 700;
-        color: #212529;
+        color: var(--color-text);
         margin-bottom: 0.2rem;
       }
       .edu-detail {
         font-size: 0.825rem;
-        color: #6c757d;
+        color: var(--color-text-secondary);
       }
 
       /* ── Skills ── */
@@ -241,8 +489,8 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.12em;
-        color: #6c757d;
-        border-bottom: 1px solid #e9ecef;
+        color: var(--color-text-secondary);
+        border-bottom: 1px solid var(--color-border-light);
         padding-bottom: 0.5rem;
         margin-bottom: 1.25rem;
       }
@@ -271,7 +519,7 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.04em;
-        color: #6c757d;
+        color: var(--color-text-secondary);
       }
 
       /* ── Interests ── */
@@ -286,30 +534,35 @@
         height: 42px;
         flex-shrink: 0;
         border-radius: 8px;
-        background: rgba(189, 93, 56, 0.08);
+        background: var(--color-primary-light);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #bd5d38;
+        color: var(--color-primary);
         font-size: 1.1rem;
       }
       .interest-text strong {
         display: block;
         font-size: 0.9rem;
         font-weight: 700;
-        color: #212529;
+        color: var(--color-text);
         margin-bottom: 0.15rem;
       }
       .interest-text p {
         font-size: 0.85rem;
-        color: #6c757d;
+        color: var(--color-text-secondary);
         margin: 0;
         line-height: 1.6;
       }
     </style>
   </head>
 
-  <body id="page-top">
+  <body
+    id="page-top"
+    data-bs-spy="scroll"
+    data-bs-target="#sideNav"
+    data-bs-offset="80"
+  >
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
       id="sideNav"
@@ -326,8 +579,8 @@
       <button
         class="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
@@ -358,12 +611,21 @@
             >
           </li>
         </ul>
+        <button id="theme-toggle" title="Toggle theme" aria-label="Toggle dark mode">
+          <span class="toggle-switch">
+            <i class="fa fa-moon-o toggle-icon"></i>
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+            <i class="fa fa-sun-o toggle-icon"></i>
+          </span>
+        </button>
       </div>
     </nav>
 
     <div class="container-fluid p-0">
       <!-- ── About ── -->
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="about">
         <div class="my-auto">
           <span class="section-label">Portfolio</span>
           <h1 class="about-title mb-0">
@@ -419,6 +681,10 @@
               <i class="fa fa-github"></i>
             </a>
           </div>
+
+          <a class="btn-resume" href="resume.pdf" download>
+            <i class="fa fa-download"></i> Download Resume
+          </a>
         </div>
       </section>
 
@@ -432,12 +698,17 @@
           <h2 class="mb-5">Experience</h2>
 
           <div class="timeline">
-            <div class="timeline-item current">
+            <div class="timeline-item current reveal">
               <span class="company-badge">Phyrem LLC</span>
               <div class="job-role">Senior Software Engineer</div>
               <div class="job-date">
-                <i class="fa fa-calendar mr-1"></i> Sep 2023 – Present
+                <i class="fa fa-calendar me-1"></i> Sep 2023 – Present
               </div>
+              <ul class="job-desc">
+                <li>Architected and delivered scalable enterprise applications using .NET Core and Angular, reducing deployment cycles through automated CI/CD pipelines in Azure</li>
+                <li>Led migration of legacy systems to Azure cloud infrastructure, improving system reliability and reducing operational overhead</li>
+                <li>Mentored junior developers through structured code reviews and pair programming, elevating team-wide code quality standards</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tech-tag">.NET Core</span>
                 <span class="tech-tag">Angular</span>
@@ -451,12 +722,17 @@
               </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
               <span class="company-badge">Seveno Solutions Limited</span>
               <div class="job-role">Software Engineer</div>
               <div class="job-date">
-                <i class="fa fa-calendar mr-1"></i> Aug 2021 – Sep 2023
+                <i class="fa fa-calendar me-1"></i> Aug 2021 – Sep 2023
               </div>
+              <ul class="job-desc">
+                <li>Developed and maintained full-stack web applications with React and .NET Core, serving thousands of daily users across multiple client projects</li>
+                <li>Implemented CI/CD pipelines in Azure DevOps, automating build, test, and deployment workflows for faster release cycles</li>
+                <li>Designed RESTful APIs and optimized SQL Server queries to improve application performance and data retrieval efficiency</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tech-tag">.NET Core</span>
                 <span class="tech-tag">React</span>
@@ -469,7 +745,7 @@
               </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
               <span class="company-badge">Lemontech Solutions</span>
               <div class="job-role">
                 Senior Software Developer
@@ -479,8 +755,12 @@
                 >
               </div>
               <div class="job-date">
-                <i class="fa fa-calendar mr-1"></i> May 2020 – Feb 2021
+                <i class="fa fa-calendar me-1"></i> May 2020 – Feb 2021
               </div>
+              <ul class="job-desc">
+                <li>Designed and built feature-rich web modules using .NET Core and React for client-facing enterprise applications</li>
+                <li>Improved application performance through strategic query optimization and code refactoring initiatives</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tech-tag">.NET Core</span>
                 <span class="tech-tag">React</span>
@@ -492,12 +772,16 @@
               </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
               <span class="company-badge">Dev Partners</span>
               <div class="job-role">Software Engineer</div>
               <div class="job-date">
-                <i class="fa fa-calendar mr-1"></i> Jun 2018 – Aug 2021
+                <i class="fa fa-calendar me-1"></i> Jun 2018 – Aug 2021
               </div>
+              <ul class="job-desc">
+                <li>Delivered multiple client projects end-to-end using .NET Core and React in an agile, fast-paced environment</li>
+                <li>Contributed to architecture decisions and code quality improvements across cross-functional development teams</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tech-tag">.NET Core</span>
                 <span class="tech-tag">React</span>
@@ -506,12 +790,16 @@
               </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
               <span class="company-badge">Note-e-fied Phils Inc.</span>
               <div class="job-role">Software Developer</div>
               <div class="job-date">
-                <i class="fa fa-calendar mr-1"></i> Jul 2017 – Jun 2018
+                <i class="fa fa-calendar me-1"></i> Jul 2017 – Jun 2018
               </div>
+              <ul class="job-desc">
+                <li>Built and maintained internal business applications using .NET MVC and jQuery, supporting key operational workflows</li>
+                <li>Modernized legacy system interfaces with responsive UI components using Bootstrap, improving user experience and accessibility</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tech-tag">.NET</span>
                 <span class="tech-tag">jQuery</span>
@@ -521,12 +809,16 @@
               </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
               <span class="company-badge">Note-e-fied Phils Inc.</span>
               <div class="job-role">Front-End Developer</div>
               <div class="job-date">
-                <i class="fa fa-calendar mr-1"></i> Jul 2016 – Jul 2017
+                <i class="fa fa-calendar me-1"></i> Jul 2016 – Jul 2017
               </div>
+              <ul class="job-desc">
+                <li>Translated design mockups into responsive, cross-browser compatible web pages using HTML5, CSS3, and JavaScript</li>
+                <li>Collaborated with back-end developers to integrate REST APIs with intuitive front-end interfaces</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tech-tag">HTML5</span>
                 <span class="tech-tag">CSS3</span>
@@ -547,24 +839,24 @@
           <span class="section-label">Background</span>
           <h2 class="mb-5">Education</h2>
 
-          <div class="edu-card">
+          <div class="edu-card reveal">
             <div class="edu-degree">
               Bachelor of Science in Computer Science
             </div>
             <div class="edu-school">St. Mary's College of Tagum</div>
             <div class="edu-detail">
-              <i class="fa fa-calendar mr-1"></i> 2012 – 2016 &nbsp;·&nbsp; GWA:
+              <i class="fa fa-calendar me-1"></i> 2012 – 2016 &nbsp;·&nbsp; GWA:
               88.13%
             </div>
           </div>
 
-          <div class="edu-card">
+          <div class="edu-card reveal">
             <div class="edu-degree">Secondary Education</div>
             <div class="edu-school">
               St. Mary's College of Tagum High School
             </div>
             <div class="edu-detail">
-              <i class="fa fa-calendar mr-1"></i> 2008 – 2012
+              <i class="fa fa-calendar me-1"></i> 2008 – 2012
             </div>
           </div>
         </div>
@@ -576,7 +868,7 @@
           <span class="section-label">Expertise</span>
           <h2 class="mb-5">Skills</h2>
 
-          <div class="skill-category">
+          <div class="skill-category reveal">
             <div class="skill-category-title">Front-End</div>
             <div class="skill-grid">
               <div class="skill-item">
@@ -642,7 +934,7 @@
             </div>
           </div>
 
-          <div class="skill-category">
+          <div class="skill-category reveal">
             <div class="skill-category-title">Back-End &amp; Cloud</div>
             <div class="skill-grid">
               <div class="skill-item">
@@ -680,7 +972,7 @@
             </div>
           </div>
 
-          <div class="skill-category">
+          <div class="skill-category reveal">
             <div class="skill-category-title">Tools &amp; Workflow</div>
             <div class="skill-grid">
               <div class="skill-item">
@@ -729,7 +1021,7 @@
           <span class="section-label">Personal</span>
           <h2 class="mb-5">Interests</h2>
 
-          <div class="interest-item">
+          <div class="interest-item reveal">
             <div class="interest-icon"><i class="fa fa-film"></i></div>
             <div class="interest-text">
               <strong>Film &amp; Anime</strong>
@@ -740,7 +1032,7 @@
             </div>
           </div>
 
-          <div class="interest-item">
+          <div class="interest-item reveal">
             <div class="interest-icon"><i class="fa fa-gamepad"></i></div>
             <div class="interest-text">
               <strong>Gaming</strong>
@@ -751,7 +1043,7 @@
             </div>
           </div>
 
-          <div class="interest-item">
+          <div class="interest-item reveal">
             <div class="interest-icon"><i class="fa fa-music"></i></div>
             <div class="interest-text">
               <strong>Guitar</strong>
@@ -765,10 +1057,12 @@
       </section>
     </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/resume.min.js"></script>
+    <button id="scroll-to-top" title="Back to top">
+      <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/resume.js"></script>
   </body>
 </html>
