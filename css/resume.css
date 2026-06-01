@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', serif;
   padding-top: 54px;
   color: #868e96;
+  background-color: var(--color-bg, #fff);
 }
 
 @media (min-width: 992px) {
@@ -20,7 +21,7 @@ h6 {
   font-family: 'Saira Extra Condensed', serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #343a40;
+  color: var(--color-text, #343a40);
 }
 
 h1 {
@@ -44,7 +45,7 @@ h2 {
 }
 
 .list-social-icons a:hover {
-  color: #336E7B;
+  color: var(--color-text-primary, #336E7B);
 }
 
 .list-social-icons a .fa-lg {
@@ -56,7 +57,7 @@ h2 {
 }
 
 .list-icons .list-inline-item i:hover {
-  color: #336E7B;
+  color: var(--color-text-primary, #336E7B);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -87,10 +88,9 @@ h2 {
   }
   #sideNav .navbar-collapse {
     display: flex;
-    align-items: flex-start;
-    flex-grow: 0;
+    flex-direction: column;
+    flex: 1;
     width: 100%;
-    margin-bottom: auto;
   }
   #sideNav .navbar-collapse .navbar-nav {
     flex-direction: column;
@@ -105,9 +105,10 @@ h2 {
 }
 
 section.resume-section {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid var(--color-border, #dee2e6);
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
+  background-color: var(--color-bg, #fff);
 }
 
 section.resume-section .resume-item .resume-date {
@@ -135,13 +136,13 @@ section.resume-section .resume-item .resume-date {
 }
 
 .text-primary {
-  color: #336E7B !important;
+  color: var(--color-text-primary, #336E7B) !important;
 }
 
 a {
-  color: #336E7B;
+  color: var(--color-text-primary, #336E7B);
 }
 
 a:hover, a:focus, a:active {
-  color: #48a5ba;
+  color: var(--color-primary, #48a5ba);
 }
